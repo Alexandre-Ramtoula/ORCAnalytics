@@ -1,6 +1,10 @@
 import pandas as pd
 from dash import Dash, Input, Output, dcc, html
 
+external_stylesheets = [
+    "https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+]
+
 data = (
     pd.read_csv("avocado.csv")
     .assign(Date=lambda data: pd.to_datetime(data["Date"], format="%Y-%m-%d"))
@@ -10,7 +14,7 @@ regions = data["region"].sort_values().unique()
 avocado_types = data["type"].sort_values().unique()
 
 app = Dash(__name__)
-app.title = "Orcanalytics: Ocean Resilience and Climate Analytics"
+app.title = "ORCAnalytics: Ocean Resilience and Climate Analytics"
 
 app.layout = html.Div(
     children=[
@@ -28,14 +32,14 @@ app.layout = html.Div(
                     style={'flex': 1, 'display': 'flex', 'justify-content': 'center'},
                     children=[
                         html.Img(
-                            src='assets/orcanalytics_logo.png',  # Replace with your image URL
-                            style={'max-width': '100%', 'max-height': '25vh'}
+                            src='assets/ORCAnalytics.png',  # Replace with your image URL
+                            style={'max-width': '100%', 'max-height': '20vh','margin': '30px 0 0 0'}
                         )
                     ]
                 ),
                 html.Div(
-                    "Ocean Resilience and Climate Analytics",
-                    style={'flex': 1, 'text-align': 'center', 'color': '#FFFFFF', 'font-size': '30px', 'font-weight': 'bold'},
+                    "Ocean Resilience & Climate Analytics",
+                    style={'flex': 1, 'text-align': 'center', 'color': '#FFFFFF', 'font-size': '60px', 'margin': '10px 0 0 0'},
                 )
             ]
         ),
