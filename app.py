@@ -24,7 +24,7 @@ app.layout = html.Div(
                         'flex-direction': 'column',
                         'justify-content': 'center',
                         'align-items': 'center',
-                        'height': '40vh',
+                        'height': '33vh',
                         'background-color': '#000000'},
 
             children=[
@@ -33,13 +33,13 @@ app.layout = html.Div(
                     children=[
                         html.Img(
                             src='assets/ORCAnalytics.png',  # Replace with your image URL
-                            style={'max-width': '100%', 'max-height': '20vh','margin': '30px 0 0 0'}
+                            style={'max-width': '100%', 'max-height': '15vh','margin': '30px 0 0 0'}
                         )
                     ]
                 ),
                 html.Div(
                     "Ocean Resilience & Climate Analytics",
-                    style={'flex': 1, 'text-align': 'center', 'color': '#FFFFFF', 'font-size': '60px', 'margin': '10px 0 0 0'},
+                    style={'flex': 1, 'text-align': 'center', 'color': '#FFFFFF', 'font-size': '40px', 'margin': '10px 0 0 0'},
                 )
             ]
         ),
@@ -150,7 +150,7 @@ def update_charts(region, avocado_type, start_date, end_date):
             },
             "xaxis": {"fixedrange": True},
             "yaxis": {"tickprefix": "$", "fixedrange": True},
-            "colorway": ["#17B897"],
+            "colorway": ["#015fe3"],
         },
     }
 
